@@ -1,0 +1,5 @@
+name: BungeeBridgeFriends
+main: net.zyuiop.bungeebridgefriends.BungeeBridgeFriends
+author: zyuiop
+version: 1.0
+depends: [BungeeBridge]
