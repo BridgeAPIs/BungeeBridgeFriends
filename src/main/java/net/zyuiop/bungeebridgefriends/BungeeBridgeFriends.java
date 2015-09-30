@@ -27,8 +27,12 @@ import java.util.stream.Collectors;
  */
 public class BungeeBridgeFriends extends Plugin {
     private FriendsManagement friendsManagement = new FriendsManagement(this);
+    private BungeeBridge bridge;
 
     public void onEnable() {
+        
+        bridge = BungeeBridge.getInstance();
+        
         CommandHelp.addHelp("friends", "friends management main command");
 
         // TODO : Messages on join/leave
@@ -69,14 +73,14 @@ public class BungeeBridgeFriends extends Plugin {
     }
 
     public DatabaseConnector getConnector() {
-        return BungeeBridge.getInstance().getConnector();
+        return bridge.getConnector();
     }
 
     public UUIDTranslator getUuidTranslator() {
-        return BungeeBridge.getInstance().getUuidTranslator();
+        return bridge.getUuidTranslator();
     }
 
     public NetworkBridge getNetworkBridge() {
-        return BungeeBridge.getInstance().getNetworkBridge();
+        return bridge.getNetworkBridge();
     }
 }
